@@ -3,10 +3,10 @@
 입력받는 폼 todo-input 컴포넌트 구현
 입력받은 todolist 출력하는 컴포넌트 구현
 
-TodoList
+TodoList/
 할 일에 대한 정보가 들어있는 todos 배열을 map 을 사용하여 여러개의 TodoItem 컴포넌트에 렌더링해주는 컴포넌트
 
-TodoItem
+TodoItem/
 각 할 일에 대한 정보를 todolist에 렌더링해주는 컴포넌트 
 handleRemove를 통해 완료 항목을 제거 가능하게 해줌.
 
