@@ -1,19 +1,19 @@
-import React from "react";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-import TodoItem from "./todo-item";
+import TodoItem from './todo-item';
 
-export default function TodoList() {
-  return (
-    <Wrapper>
-      Todo list가 들어가는 자리입니다!
-      <TodoItem />
-    </Wrapper>
-  );
+export default class TodoList extends Component {
+	render() {
+		const { data, onRemove } = this.props;
+		const list = data.map((todolist) => (
+			<TodoItem key={todolist.id} todolist={todolist} onRemove={onRemove} />
+		));
+		return <TodoListWrapper> {list} </TodoListWrapper>;
+	}
 }
 
-const Wrapper = styled.div`
-  border: solid 1px;
-  font-size: 18px;
-  flex: 1;
+const TodoListWrapper = styled.div`
+	font-size: 18px;
+	flex: 1;
 `;
