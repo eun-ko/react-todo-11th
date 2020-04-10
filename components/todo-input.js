@@ -13,7 +13,6 @@ export default class TodoInput extends Component {
 	};
 	handleSubmit = (e) => {
 		e.preventDefault();
-		// 페이지 리로딩 방지
 		if (this.state.todo === '' || this.state.date === '') {
 			alert('모든 항목을 입력해주세요!');
 			return false;
@@ -22,15 +21,14 @@ export default class TodoInput extends Component {
 			return false;
 		} else alert('입력되었습니다!');
 		this.props.onCreate(this.state);
-		// 상태값을 onCreate 를 통하여 부모에게 전달
 		this.setState({ date: '', todo: '' });
-		// 상태 초기화
 	};
-	maxLengthCheck = (object) => {
+	maxLengthCheck(object) {
 		if (object.value.length > object.maxLength) {
 			object.value = object.value.slice(0, object.maxLength);
 		}
-	};
+	}
+
 	render() {
 		const { date, todo } = this.state;
 		return (
@@ -38,7 +36,7 @@ export default class TodoInput extends Component {
 				<InputSection>
 					<P>시간</P>
 					<Input
-						maxlength="4"
+						maxlength="8"
 						oninput="maxLengthCheck(this)"
 						type="number"
 						placeholder="날짜를 입력하세요 (ex.20200404)"
