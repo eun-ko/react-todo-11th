@@ -1,30 +1,20 @@
 # react-todo-11th
 
-## 실행 방법
+입력받는 폼 todo-input 컴포넌트 구현
+입력받은 todolist 출력하는 컴포넌트 구현
 
-```
-npm install
-npm run dev
-```
+TodoList
+할 일에 대한 정보가 들어있는 todos 배열을 map 을 사용하여 여러개의 TodoItem 컴포넌트에 렌더링해주는 컴포넌트
 
-- npm install : 필요한 모든 패키지를 설치합니다. 처음 1번만 실행하면 됩니다.
-- npm run dev : react 어플리케이션을 브라우저에서 실행합니다.
+TodoItem
+각 할 일에 대한 정보를 todolist에 렌더링해주는 컴포넌트 
+handleRemove를 통해 완료 항목을 제거 가능하게 해줌.
 
-## 배포 방법
 
-- now에 회원가입하고 now를 설치합니다.
+시간과 내용을 받는 폼 두가지를 input태그 두개로 생성하는과정에서 해맸었는데
+input의 name속성을 부여해서 구분하게하면 된다는 점이 흥미로웠습니다.
+state에 대해 아직 완벽하게 잘 이해하지 못한 것 같습니다. 함수형으로도 다시 만들어봐야할것같습니다.
+maxLengthCheck이 왜 작동이 안되는건지도 잘 모르겠습니다ㅜㅜ
+그리고 왜 todo-item.js에 onClick={onRemove}하면 적용안되고 함수따로 만들어서해줘야 작동되는지도 잘 모르겠어요
 
-1. https://zeit.co 에서 회원가입합니다.
-2. 터미널에서 npm i -g now를 입력해 now를 글로벌로 설치합니다.
-3. 명령 프롬프트에서 프로젝트 폴더에 들어간 후 now를 입력합니다.
-4. ID/PW를 입력합니다.
-5. zeit 가입시 입력한 이메일에서 인증 링크를 클릭합니다. <인증완료>
-6. 다시 프로젝트 폴더에서 now를 입력하면 자동으로 생성된 url에 배포됩니다!
 
-## 미션 설명
-
-[미션 설명](./docs/mission-description/README.md)
-
-## 미션 제출 방법
-
-[미션 제출 방법](./docs/how-to-submit/README.md)
