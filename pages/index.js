@@ -39,7 +39,7 @@ export default function Home() {
 
 	return (
 		<Wrapper>
-			<Subject>리액트-투두</Subject>
+			<Title>리액트-투두</Title>
 			<Contents>
 				<TodoInput
 					date={date}
@@ -64,11 +64,10 @@ const Wrapper = styled.div`
 	background-color: rgb(155, 197, 195);
 	padding: 4rem 5rem;
 `;
-const Subject = styled.div`
+const Title = styled.h1`
 	font-size: 3rem;
 	font-weight: 600;
-	padding: 0px;
-	margin: 0px 0px 3rem;
+	margin-bottom: 3rem;
 	color: white;
 `;
 const Contents = styled.div`
