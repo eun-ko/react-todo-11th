@@ -1,25 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-export default class TodoItem extends Component {
-	handleRemove = () => {
-		const { todolist, onRemove } = this.props;
-		onRemove(todolist.id);
-	};
+export default function TodoItem(props) {
+	const { id, date, todo, onRemove } = props;
 
-	render() {
-		const { date, todo } = this.props.todolist;
-
-		return (
-			<TodoItemWrapper>
-				<Todo>{todo}</Todo>
-				<Date>
-					{date}
-					<Button onClick={this.handleRemove}>완료</Button>
-				</Date>
-			</TodoItemWrapper>
-		);
-	}
+	return (
+		<TodoItemWrapper>
+			<Todo>{todo}</Todo>
+			<Date>
+				{date}
+				<Button onClick={() => onRemove(id)}>완료</Button>
+			</Date>
+		</TodoItemWrapper>
+	);
 }
 const Date = styled.div`
 	font-size: 1.5rem;
