@@ -55,7 +55,7 @@ export default function Home() {
 	);
 }
 const Space = styled.div`
-	flex: 0.3;
+	flex: 1;
 `;
 
 const Wrapper = styled.div`
