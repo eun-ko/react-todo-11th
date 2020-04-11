@@ -1,66 +1,40 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-export default class TodoInput extends Component {
-	state = {
-		date: '',
-		todo: '',
-	};
-	handleChange = (e) => {
-		this.setState({
-			[e.target.name]: e.target.value,
-		});
-	};
-	handleSubmit = (e) => {
-		e.preventDefault();
-		if (this.state.todo === '' || this.state.date === '') {
-			alert('모든 항목을 입력해주세요!');
-			return false;
-		} else if (this.state.date.length != 8) {
-			alert('날짜를 올바른 형식으로 입력해주세요!');
-			return false;
-		} else alert('입력되었습니다!');
-		this.props.onCreate(this.state);
-		this.setState({ date: '', todo: '' });
-	};
-	maxLengthCheck(object) {
+export default function TodoInput(props) {
+	const { date, todo, onChangeTodo, onChangeDate, onSubmit } = props;
+
+	const maxLengthCheck = (object) => {
 		if (object.value.length > object.maxLength) {
 			object.value = object.value.slice(0, object.maxLength);
 		}
-	}
+	};
 
-	render() {
-		const { date, todo } = this.state;
-		return (
-			<Form onSubmit={this.handleSubmit}>
-				<InputSection>
-					<P>시간</P>
-					<Input
-						maxlength="8"
-						oninput="maxLengthCheck(this)"
-						type="number"
-						placeholder="날짜를 입력하세요 (ex.20200404)"
-						value={date}
-						onChange={this.handleChange}
-						name="date"
-					/>
-				</InputSection>
+	return (
+		<Form>
+			<InputSection>
+				<P>시간</P>
+				<Input
+					maxlength="8"
+					oninput="maxLengthCheck(this)"
+					type="number"
+					placeholder="날짜를 입력하세요 (ex.20200404)"
+					value={date}
+					onChange={onChangeDate}
+				/>
+			</InputSection>
 
-				<InputSection>
-					<P>TODO</P>
-					<TextArea
-						placeholder="할 일을 입력하세요"
-						value={todo}
-						onChange={this.handleChange}
-						name="todo"
-					/>
-				</InputSection>
-				<Button type="submit" onClick={this.warn}>
-					등록
-				</Button>
-			</Form>
-		);
-	}
+			<InputSection>
+				<P>TODO</P>
+				<TextArea
+					placeholder="할 일을 입력하세요"
+					value={todo}
+					onChange={onChangeTodo}
+				/>
+			</InputSection>
+			<Button onClick={onSubmit}>등록</Button>
+		</Form>
+	);
 }
 
 const Input = styled.input`
