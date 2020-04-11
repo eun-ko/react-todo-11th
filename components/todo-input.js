@@ -44,19 +44,14 @@ export default function TodoInput(props) {
 
 const Input = styled.input`
 	width: 80%;
-	border-width: 1px;
-	border-style: solid;
-	border-color: rgb(97, 97, 97);
-	border-image: initial;
+	border: 1px solid rgb(97, 97, 97);
 	padding: 0.5rem 0.8rem;
 `;
 const TextArea = styled.textarea`
 	width: 80%;
 	height: 30vh;
 	resize: none;
-	border-width: 1px;
-	border-style: solid;
-	border-color: rgb(97, 97, 97);
+	border: 1px solid rgb(97, 97, 97);
 	padding: 0.5rem 0.8rem;
 `;
 const P = styled.p`
