@@ -16,7 +16,7 @@ export default function TodoInput(props) {
 	};
 
 	return (
-		<Form>
+		<Wrapper>
 			<Row>
 				<Label>시간</Label>
 				<Input
@@ -38,7 +38,7 @@ export default function TodoInput(props) {
 				/>
 			</Row>
 			<SubmitButton onClick={onSubmit}>등록</SubmitButton>
-		</Form>
+		</Wrapper>
 	);
 }
 
@@ -67,17 +67,14 @@ const Row = styled.div`
 	justify-content: space-between;
 	margin-bottom: 3rem;
 `;
-const Form = styled.form`
+const Wrapper = styled.form`
 	font-size: 18px;
-
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	height: 37rem;
-	flex: 1;
-	border-width: 1px;
-	border-style: solid;
+	border: 1px solid black;
 	padding: 1rem 2rem;
 `;
 const SubmitButton = styled.button`
