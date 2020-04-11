@@ -7,14 +7,6 @@ import TodoList from '../components/todo-list';
 export default function Home() {
 	const [todos, setTodos] = useState([]);
 
-	const changeTodo = (e) => {
-		setTodo(e.target.value);
-	};
-
-	const changeDate = (e) => {
-		setDate(e.target.value);
-	};
-
 	const removeTodo = (id) => {
 		const newTodos = [...todos];
 		setTodos(newTodos.filter((info) => info.id !== id));
