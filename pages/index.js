@@ -74,5 +74,4 @@ const Contents = styled.div`
 	font-size: 0.1rem;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
 `;
