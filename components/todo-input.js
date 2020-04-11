@@ -20,24 +20,21 @@ export default function TodoInput(props) {
 			<Row>
 				<Label>시간</Label>
 				<Input
-					maxlength="8"
-					oninput="maxLengthCheck(this)"
 					type="number"
+					name="date"
 					placeholder="날짜를 입력하세요 (ex.20200404)"
-					value={date}
-					onChange={onChangeDate}
+					onChange={handleFormChange}
 				/>
 			</Row>
-
 			<Row>
 				<Label>TODO</Label>
 				<TextArea
+					name="todo"
 					placeholder="할 일을 입력하세요"
-					value={todo}
-					onChange={onChangeTodo}
+					onChange={handleFormChange}
 				/>
 			</Row>
-			<SubmitButton onClick={onSubmit}>등록</SubmitButton>
+			<Button onClick={onSubmit}>등록</Button>
 		</Wrapper>
 	);
 }
