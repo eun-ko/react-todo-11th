@@ -2,41 +2,39 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function TodoItem(props) {
-	const { id, date, todo, onRemove } = props;
-
+	const { todo, onDelete } = props;
+	const { date, todo } = todo;
 	return (
-		<TodoItemWrapper>
-			<Todo>{todo}</Todo>
-			<Date>
-				{date}
-				<Button onClick={() => onRemove(id)}>완료</Button>
-			</Date>
-		</TodoItemWrapper>
+		<Wrapper>
+			<Row>
+				<P>{todo}</P>
+				<P>{date}</P>
+			</Row>
+			<DeleteButton onClick={onDelete}>??</DeleteButton>
+		</Wrapper>
 	);
 }
-const Date = styled.div`
-	font-size: 1.5rem;
+const Row = styled.div`
 	display: flex;
-	color: white;
-	flex-direction: column;
+	flex-direction: row;
+	justify-content: space-between;
 `;
-const Todo = styled.div`
+const P = styled.p`
 	font-size: 1.5rem;
 	color: white;
-	display: flex;
-	flex-direction: column;
 `;
-const Button = styled.button`
+const DeleteButton = styled.button`
 	color: white;
 	background-color: rgb(97, 97, 97);
 	font-size: 1.5rem;
 	outline: none;
-	border-width: initial;
-	border-style: none;
-	padding: 0.5rem 1rem;
+	border: none;
 	border-radius: 0.3rem;
+	padding: 0.5rem 1rem;
+	width: fit-content;
+	margin-left: auto;
 `;
-const TodoItemWrapper = styled.div`
+const Wrapper = styled.div`
 	font-size: 18px;
 	border: solid 1px black;
 
