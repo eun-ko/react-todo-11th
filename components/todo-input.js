@@ -2,7 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function TodoInput(props) {
-	const { date, todo, onChangeTodo, onChangeDate, onSubmit } = props;
+	const [newTodo, setNewTodo] = useState({ date: '', todo: '' });
+	const { onSubmit } = props;
+
+	const handleFormChange = (e) => {
+		setNewTodo({ ...newTodo, [e.target.name]: e.target.value });
+	};
 
 	const maxLengthCheck = (object) => {
 		if (object.value.length > object.maxLength) {
