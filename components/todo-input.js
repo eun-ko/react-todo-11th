@@ -17,7 +17,7 @@ export default function TodoInput(props) {
 
 	return (
 		<Form>
-			<InputSection>
+			<Row>
 				<Label>시간</Label>
 				<Input
 					maxlength="8"
@@ -27,16 +27,16 @@ export default function TodoInput(props) {
 					value={date}
 					onChange={onChangeDate}
 				/>
-			</InputSection>
+			</Row>
 
-			<InputSection>
+			<Row>
 				<Label>TODO</Label>
 				<TextArea
 					placeholder="할 일을 입력하세요"
 					value={todo}
 					onChange={onChangeTodo}
 				/>
-			</InputSection>
+			</Row>
 			<Button onClick={onSubmit}>등록</Button>
 		</Form>
 	);
@@ -59,14 +59,12 @@ const Label = styled.label`
 	color: white;
 	margin: 0;
 `;
-const InputSection = styled.div`
+const Row = styled.div`
 	color: white;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	-webkit-box-pack: justify;
 	justify-content: space-between;
-	align-items: flex-start;
 	margin-bottom: 3rem;
 `;
 const Form = styled.form`
