@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export default function TodoInput(props) {
@@ -7,12 +7,6 @@ export default function TodoInput(props) {
 
 	const handleFormChange = (e) => {
 		setNewTodo({ ...newTodo, [e.target.name]: e.target.value });
-	};
-
-	const maxLengthCheck = (object) => {
-		if (object.value.length > object.maxLength) {
-			object.value = object.value.slice(0, object.maxLength);
-		}
 	};
 
 	return (
@@ -34,7 +28,7 @@ export default function TodoInput(props) {
 					onChange={handleFormChange}
 				/>
 			</Row>
-			<Button onClick={onSubmit}>등록</Button>
+			<SubmitButton onClick={onSubmit}>등록</SubmitButton>
 		</Wrapper>
 	);
 }
