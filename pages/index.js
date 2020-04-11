@@ -13,19 +13,18 @@ export default function Home() {
 			...todo.slice(index + 1, todos.length),
 		]);
 	};
-	const submitTodo = (e) => {
-		e.preventDefault();
+	const handleAdd = (newtodo) => {
+		const { todo, date } = newtodo;
 		if (todo === '' || date === '') {
 			alert('모든 항목을 입력해주세요!');
-			return false;
-		} else if (date.length != 8) {
+			return;
+		} else if (date.length !== 8) {
 			alert('날짜를 올바른 형식으로 입력해주세요!');
-			return false;
-		} else alert('입력되었습니다!');
-		setTodos(todos.concat({ id: id, date: date, todo: todo }));
-		setTodo('');
-		setDate('');
-		setID(id + 1);
+			return;
+		} else {
+			setTodos(todos.concat({ date, todo }));
+			alert('입력되었습니다!');
+		}
 	};
 
 	return (
