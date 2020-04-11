@@ -5,10 +5,7 @@ import TodoInput from '../components/todo-input';
 import TodoList from '../components/todo-list';
 
 export default function Home() {
-	const [date, setDate] = useState();
-	const [todo, setTodo] = useState();
 	const [todos, setTodos] = useState([]);
-	const [id, setID] = useState(0);
 
 	const changeTodo = (e) => {
 		setTodo(e.target.value);
