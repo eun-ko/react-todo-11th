@@ -18,7 +18,7 @@ export default function TodoInput(props) {
 	return (
 		<Form>
 			<InputSection>
-				<P>시간</P>
+				<Label>시간</Label>
 				<Input
 					maxlength="8"
 					oninput="maxLengthCheck(this)"
@@ -30,7 +30,7 @@ export default function TodoInput(props) {
 			</InputSection>
 
 			<InputSection>
-				<P>TODO</P>
+				<Label>TODO</Label>
 				<TextArea
 					placeholder="할 일을 입력하세요"
 					value={todo}
@@ -54,7 +54,7 @@ const TextArea = styled.textarea`
 	border: 1px solid rgb(97, 97, 97);
 	padding: 0.5rem 0.8rem;
 `;
-const P = styled.p`
+const Label = styled.label`
 	font-size: 1.5rem;
 	color: white;
 	margin: 0;
