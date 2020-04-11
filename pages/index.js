@@ -31,15 +31,9 @@ export default function Home() {
 		<Wrapper>
 			<Title>리액트-투두</Title>
 			<Contents>
-				<TodoInput
-					date={date}
-					todo={todo}
-					onChangeDate={changeDate}
-					onChangeTodo={changeTodo}
-					onSubmit={submitTodo}
-				/>
+				<TodoInput onSubmit={handleAdd} />
 				<Space />
-				<TodoList data={todos} onRemove={removeTodo} />
+				<TodoList {...{ todos }} onDelete={handleDelete} />
 			</Contents>
 		</Wrapper>
 	);
