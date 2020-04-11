@@ -37,7 +37,7 @@ export default function TodoInput(props) {
 					onChange={onChangeTodo}
 				/>
 			</Row>
-			<Button onClick={onSubmit}>등록</Button>
+			<SubmitButton onClick={onSubmit}>등록</SubmitButton>
 		</Form>
 	);
 }
@@ -80,15 +80,12 @@ const Form = styled.form`
 	border-style: solid;
 	padding: 1rem 2rem;
 `;
-const Button = styled.button`
+const SubmitButton = styled.button`
 	color: white;
 	background-color: rgb(97, 97, 97);
 	font-size: 1.5rem;
 	outline: none;
-	border-width: initial;
-	border-style: none;
-	//border-color: initial;
-	//border-image: initial;
+	border: none;
 	padding: 0.5rem 1rem;
 	border-radius: 0.3rem;
 `;
