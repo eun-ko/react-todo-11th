@@ -7,9 +7,11 @@ import TodoList from '../components/todo-list';
 export default function Home() {
 	const [todos, setTodos] = useState([]);
 
-	const removeTodo = (id) => {
-		const newTodos = [...todos];
-		setTodos(newTodos.filter((info) => info.id !== id));
+	const handleDelete = (index) => () => {
+		setTodos([
+			...todos.slice(0, index),
+			...todo.slice(index + 1, todos.length),
+		]);
 	};
 	const submitTodo = (e) => {
 		e.preventDefault();
