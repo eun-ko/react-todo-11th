@@ -5,6 +5,8 @@ export default function TodoInput(props) {
 	const [newTodo, setNewTodo] = useState({ date: '', todo: '' });
 	const { onSubmit } = props;
 
+	console.log(newTodo);
+
 	const handleFormChange = (e) => {
 		setNewTodo({ ...newTodo, [e.target.name]: e.target.value });
 	};
@@ -28,7 +30,7 @@ export default function TodoInput(props) {
 					onChange={handleFormChange}
 				/>
 			</Row>
-			<SubmitButton onClick={onSubmit}>등록</SubmitButton>
+			<SubmitButton onClick={() => onSubmit(newTodo)}>등록</SubmitButton>
 		</Wrapper>
 	);
 }
@@ -60,7 +62,7 @@ const Row = styled.div`
 `;
 const Wrapper = styled.form`
 	font-size: 18px;
-	width: 100%;
+	width: 40%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

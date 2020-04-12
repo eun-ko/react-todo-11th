@@ -14,7 +14,7 @@ export default function TodoList(props) {
 				})
 				.map((todoObj, index) => (
 					<TodoItem
-						key={JSON.stringify(todo)}
+						key={JSON.stringify(todoObj)}
 						{...{ todoObj }}
 						onDelete={onDelete(index)}
 					/>
@@ -24,6 +24,7 @@ export default function TodoList(props) {
 }
 
 const Wrapper = styled.div`
+	width:40%
 	font-size: 18px;
 	flex: 1;
 `;

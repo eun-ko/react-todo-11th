@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default function TodoItem(props) {
-	const { todo, onDelete } = props;
-	const { date, todo } = todo;
+	const { todoObj, onDelete } = props;
+	const { todo, date } = todoObj;
 	return (
 		<Wrapper>
 			<Row>
@@ -24,6 +24,7 @@ const P = styled.p`
 	color: white;
 `;
 const DeleteButton = styled.button`
+	display: block;
 	color: white;
 	background-color: rgb(97, 97, 97);
 	font-size: 1.5rem;

@@ -6,11 +6,13 @@ import TodoList from '../components/todo-list';
 
 export default function Home() {
 	const [todos, setTodos] = useState([]);
+	console.log(todos);
 
 	const handleDelete = (index) => () => {
+		console.log('hi');
 		setTodos([
 			...todos.slice(0, index),
-			...todo.slice(index + 1, todos.length),
+			...todos.slice(index + 1, todos.length),
 		]);
 	};
 	const handleAdd = (newtodo) => {
@@ -22,7 +24,8 @@ export default function Home() {
 			alert('날짜를 올바른 형식으로 입력해주세요!');
 			return;
 		} else {
-			setTodos(todos.concat({ date, todo }));
+			console.log(newtodo);
+			setTodos([...todos, newtodo]);
 			alert('입력되었습니다!');
 		}
 	};
@@ -48,12 +51,13 @@ const Wrapper = styled.div`
 	background-color: rgb(155, 197, 195);
 	padding: 4rem 5rem;
 `;
-const Title = styled.h1`
+const Title = styled.p`
 	font-size: 3rem;
 	font-weight: 600;
 	margin-bottom: 3rem;
 	color: white;
 `;
+
 const Contents = styled.div`
 	font-size: 0.1rem;
 	display: flex;
